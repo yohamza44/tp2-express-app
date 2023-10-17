@@ -1,0 +1,17 @@
+html
+  head
+    title Home
+    //- link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css")
+    script(src="https://cdn.tailwindcss.com")
+
+  body.p-6.bg-slate-200
+    h1.text-2xl.font-semibold.text-center.mb-4 Welcome!
+
+    div.grid.grid-cols-4.gap-4
+      each book in books
+        .bg-white.shadow-md.rounded-lg.overflow-hidden.p-4
+          a(href=book.url)
+            img.w-full(src=book.image, alt=book.title)
+          h2.text-xl.font-semibold.mt-2= book.title
+          p.text-gray-600= book.subtitle
+          p.text-gray-800.font-semibold.mt-2= book.price
